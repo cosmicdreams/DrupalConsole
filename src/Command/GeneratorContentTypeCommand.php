@@ -25,21 +25,21 @@ class GeneratorContentTypeCommand extends GeneratorCommand
     protected function configure()
     {
         $this
-            ->setName('generate:contenttype')
-            ->setDescription($this->trans('commands.generate.contenttype.description'))
-            ->setHelp($this->trans('commands.generate.contenttype.command.help'))
+            ->setName('generate:content:type')
+            ->setDescription($this->trans('commands.generate.content.type.description'))
+            ->setHelp($this->trans('commands.generate.content.type.command.help'))
             ->addOption('module', '', InputOption::VALUE_REQUIRED, $this->trans('commands.common.options.module'))
             ->addOption(
                 'bundle-name',
                 '',
                 InputOption::VALUE_OPTIONAL,
-                $this->trans('commands.generate.contenttype.options.bundle-name')
+                $this->trans('commands.generate.content.type.options.bundle-name')
             )
             ->addOption(
                 'bundle-title',
                 '',
                 InputOption::VALUE_OPTIONAL,
-                $this->trans('commands.generate.contenttype.options.bundle-title')
+                $this->trans('commands.generate.content.type.options.bundle-title')
             );
     }
 
@@ -91,7 +91,7 @@ class GeneratorContentTypeCommand extends GeneratorCommand
         if (!$bundle_name) {
             $bundle_name = $dialog->askAndValidate(
                 $output,
-                $dialog->getQuestion($this->trans('commands.generate.contenttype.questions.bundle-name'), 'default'),
+                $dialog->getQuestion($this->trans('commands.generate.content.type.questions.bundle-name'), 'default'),
                 function ($bundle_name) {
                     return $this->validateClassName($bundle_name);
                 },
@@ -107,7 +107,7 @@ class GeneratorContentTypeCommand extends GeneratorCommand
         if (!$bundle_title) {
             $bundle_title = $dialog->askAndValidate(
               $output,
-              $dialog->getQuestion($this->trans('commands.generate.contenttype.questions.bundle-title'), 'default'),
+              $dialog->getQuestion($this->trans('commands.generate.content.type.questions.bundle-title'), 'default'),
               function ($bundle_title) {
                   return $this->validateClassName($bundle_title);
               },
